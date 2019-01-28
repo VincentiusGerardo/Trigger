@@ -1,11 +1,11 @@
 <?php
 
-    class Front extends CI_Controller{
+    class Admin extends CI_Controller{
         public function __construct(){
             parent::__construct();
         }
 
         public function index(){
-            echo "Hi";
+            echo "Hello";
         }
     }
