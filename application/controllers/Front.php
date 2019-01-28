@@ -6,6 +6,6 @@
         }
 
         public function index(){
-            echo "Hi";
+            $this->load->view('header');
         }
     }
