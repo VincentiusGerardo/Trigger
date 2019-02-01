@@ -8,4 +8,12 @@
         public function index(){
             
         }
+
+        public function doLogIn(){
+
+        }
+
+        public function doLogOut(){
+            
+        }
     }

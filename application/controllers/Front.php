@@ -7,6 +7,19 @@
 
         public function index(){
             $this->load->view('header');
-            $this->load->view('home');
+            // $this->load->view('home');
+            $this->load->view('footer');
+        }
+
+        public function products($p = null){
+
+        }
+
+        public function about(){
+
+        }
+
+        public function contact(){
+
         }
     }
