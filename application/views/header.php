@@ -12,15 +12,26 @@
     <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>"/>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
+    <!-- Template -->
+    <link rel="stylesheet" href="<?= base_url('css/agency.css') ?>"/>
+    <script src="<?= base_url('js/agency.js') ?>"></script>
+
+    <!-- Font -->
+    <link rel="stylesheet" href="<?= base_url('fontawesome-free/css/all.min.css') ?>"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
     <!-- Custom css & js -->
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>"/>
     <script src="<?= base_url('js/script.js') ?>"></script>
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="<?= base_url() ?>">Trigger</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>

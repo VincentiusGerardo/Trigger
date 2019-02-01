@@ -1,13 +1,10 @@
-<!-- <a href="https://www.colourlovers.com/palette/205862/Heaven_Dreams" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/205/205862_Heaven_Dreams.png" style="width: 240px; height: 120px; border: 0 none;" alt="Heaven_Dreams" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/601777/Youre_Happy_Now" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/601/601777_Youre_Happy_Now.png" style="width: 240px; height: 120px; border: 0 none;" alt="Youre_Happy_Now" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/623761/Walking_Away" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/623/623761_Walking_Away.png" style="width: 240px; height: 120px; border: 0 none;" alt="Walking_Away" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/667665/Perfect_Symmetry" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/667/667665_Perfect_Symmetry.png" style="width: 240px; height: 120px; border: 0 none;" alt="Perfect_Symmetry" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/669372/Sister_of_Night" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/669/669372_Sister_of_Night.png" style="width: 240px; height: 120px; border: 0 none;" alt="Sister_of_Night" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/793931/Nightly_Cares" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/793/793931_Nightly_Cares.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nightly_Cares" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/806036/For_Another_One" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/806/806036_For_Another_One.png" style="width: 240px; height: 120px; border: 0 none;" alt="For_Another_One" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br>
-<a href="https://www.colourlovers.com/palette/626506/Come_Back_To_Bed" target="_blank"><img src="https://www.colourlovers.com/images/badges/p/626/626506_Come_Back_To_Bed.png" style="width: 240px; height: 120px; border: 0 none;" alt="Come_Back_To_Bed" /></a><br /><span style="font-size: 10px; color: #5e5e5e;"><a href="//www.colourlovers.com/color" target="_blank" style="font-size: 10px; color: #5e5e5e;">Color</a> by <a href="//www.colourlovers.com/" target="_blank" style="font-size: 10px; color: #5e5e5e;">COLOURlovers</a></span><br> -->
-<script>
-    $(function(){
-        $('body').css('background-color','#fff');
-    });
-</script>
+
+<header class="masthead">
+    <div class="container">
+    <div class="intro-text">
+        <div class="intro-lead-in">Welcome To Our Studio!</div>
+        <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+    </div>
+    </div>
+</header>
