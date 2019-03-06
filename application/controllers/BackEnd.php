@@ -14,4 +14,10 @@
             $this->load->view('admin/v_home');
             $this->load->view('admin/footer');
         }
+
+        public function aboutus(){
+            $this->load->view('admin/header');
+            //$this->load->view('admin/v_home');
+            $this->load->view('admin/footer');
+        }
     }
