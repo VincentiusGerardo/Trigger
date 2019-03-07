@@ -6,5 +6,10 @@
             parent::__construct();
         }
 
+        public function getAbout($a){
+            $cond = array('JudulSEO' => $a);
+            $query = $this->db->get_where('ms_about',$cond);
+            return $query->result();
+        }
         
     }

@@ -56,9 +56,10 @@ $route['translate_uri_dashes'] = FALSE;
 /* Custom Routes */
 
 // Front End
-$route['About'] = 'FrontEnd/About';
-$route['Gallery'] = 'FrontEnd/Gallery';
+$route['About/(:any)'] = 'FrontEnd/About/$1';
 $route['Contact'] = 'FrontEnd/Contact';
+$route['Product'] = 'FrontEnd/Product';
+$route['Product/Detail/(:any)'] = 'FrontEnd/Detail/$1';
 
 //Login
 $route['Admin'] = 'Login/index';
@@ -66,3 +67,4 @@ $route['Admin'] = 'Login/index';
 //Admin Page
 $route['Admin/Module'] = 'BackEnd/index';
 $route['Admin/Module/(:any)'] = 'BackEnd/$1';
+$route['Admin/Module/About/(:any)'] = 'BackEnd/About/$1';

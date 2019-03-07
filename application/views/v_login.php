@@ -11,6 +11,8 @@
 
   <title>Trigger | Login</title>
 
+  <link rel="icon" href="<?= base_url('media/logo.png') ?>" type="image/png">
+
   <!-- jQuery -->
   <script src="<?= base_url('js/jquery.min.js') ?>"></script>
 

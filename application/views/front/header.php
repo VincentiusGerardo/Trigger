@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trigger EO</title>
+
+    <!-- Image on tab -->
+    <link rel="icon" href="<?= base_url('media/logo.png') ?>" type="image/png">
+
     <!-- Jquery -->
     <script src="<?= base_url('js/jquery.min.js') ?>"></script>
 
@@ -27,15 +31,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-            <a class="nav-link" href="<?= base_url() ?>">Home
-                    <span class="sr-only">(current)</span>
-                </a>
+            <a class="nav-link" href="<?= base_url() ?>">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">About</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="<?= base_url('About/CompanyProfile'); ?>">Company Profile</a>
+                    <a class="dropdown-item" href="<?= base_url('About/VisiMisi'); ?>">Visi & Misi</a>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('About/'); ?>">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>">Services</a>
+                <a class="nav-link" href="<?= base_url('Product/'); ?>">Product</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('Contact/'); ?>">Contact</a>
