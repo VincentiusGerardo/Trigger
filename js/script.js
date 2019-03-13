@@ -1,7 +1,8 @@
 $(function(){
     $('.editor').summernote({
-        placeholder: 'Hello bootstrap 4',
-        tabsize: 2,
-        height: 100
+        height: 200,
+        disableResizeEditor: true
       });
+
+      $('.selectpicker').selectpicker();
 });
