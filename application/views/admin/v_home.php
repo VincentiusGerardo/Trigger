@@ -1,3 +1,8 @@
+<style>
+h1{
+    font-size:400%;
+}
+</style>
 <h1 class="text-center">
     <p><?= date("l, j F Y") ?></p>
     <table align="center">

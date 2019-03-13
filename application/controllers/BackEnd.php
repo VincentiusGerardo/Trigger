@@ -26,4 +26,9 @@
             $this->load->view('admin/v_about',$data);
             $this->load->view('admin/footer');
         }
+        
+        public function product(){
+            $this->getHeader();
+            $this->load->view('admin/footer');
+        }
     }

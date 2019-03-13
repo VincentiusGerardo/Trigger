@@ -10,6 +10,8 @@
   <meta name="author" content="">
 
   <title>Trigger EO | Admin</title>
+  
+  <script src="<?= base_url('js/jquery.min.js') ?>"></script>
 
   <link rel="icon" href="<?= base_url('media/logo.png') ?>" type="image/png">
 
@@ -21,17 +23,19 @@
   <link href="<?= base_url('css/sb-admin-2.css') ?>" rel="stylesheet">
   <script src="<?= base_url('js/sb-admin-2.js') ?>"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?= base_url('js/jquery.min.js') ?>"></script>
-  <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
+  <link href="<?= base_url('summernote/summernote-bs4.css') ?>" rel="stylesheet">
+  <script src="<?= base_url('summernote/summernote-bs4.js') ?>"></script>
+  
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?= base_url('js/jquery.easing.min.js') ?>"></script>
+  <!-- Bootstrap core-->
+  <link rel="stylesheet" type="text/css" href="<?= base_url('css/bootstrap.min.css') ?>">
+  <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
 
   <!-- Custom scripts for all pages-->
   <link rel="stylesheet" type="text/css" href="<?= base_url('css/style.css')?>">
   <script src="<?= base_url('js/script.js') ?>"></script>
   <script src="<?= base_url('js/jam.js') ?>"></script>
+  
   
 </head>
 
@@ -76,7 +80,7 @@
 
       <!-- Products -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="<?= base_url('Admin/Module/Product') ?>">
           <i class="fas fa-fw fa-image"></i>
           <span>Product</span></a>
       </li>
