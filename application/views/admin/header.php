@@ -35,6 +35,10 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url('css/bootstrap-select.min.css') ?>">
   <script src="<?= base_url('js/bootstrap-select.min.js') ?>"></script>
 
+  <!-- Bootstrap table -->
+  <link rel="stylesheet" type="text/css" href="<?= base_url('css/bootstrap-table.min.css') ?>">
+  <script src="<?= base_url('js/bootstrap-table.min.js') ?>"></script>
+
   <!-- Custom scripts for all pages-->
   <link rel="stylesheet" type="text/css" href="<?= base_url('css/style.css')?>">
   <script src="<?= base_url('js/script.js') ?>"></script>
