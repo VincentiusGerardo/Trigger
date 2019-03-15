@@ -20,8 +20,8 @@
             $this->load->view('admin/footer');
         }
 
-        public function about($h){
-            $data['isi'] = $this->Model_Trigger->getAbout($h);
+        public function about(){
+            $data['isi'] = $this->Model_Trigger->getAbout();
             $this->getHeader();
             $this->load->view('admin/v_about',$data);
             $this->load->view('admin/footer');
@@ -29,6 +29,9 @@
         
         public function product(){
             $this->getHeader();
+            $this->load->view('admin/v_product');
             $this->load->view('admin/footer');
         }
+
+        
     }

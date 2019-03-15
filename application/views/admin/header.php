@@ -69,21 +69,16 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Admin/Module/') ?>">
           <i class="fas fa-fw fa-home"></i>
-          <span>Home</span></a>
+          <span>Home</span>
+        </a>
       </li>
-
+      
       <!-- About Us -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#subMenu1" aria-expanded="true" aria-controls="subMenu1">
+        <a class="nav-link" href="<?= base_url('Admin/Module/AboutUs') ?>">
           <i class="fas fa-fw fa-question-circle"></i>
           <span>About</span>
         </a>
-        <div id="subMenu1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('Admin/Module/About/AboutUs') ?>">About Us</a>
-            <a class="collapse-item" href="<?= base_url('Admin/Module/About/VisiMisi') ?>">Visi & Misi</a>
-          </div>
-        </div>
       </li>
 
       <!-- Products -->
