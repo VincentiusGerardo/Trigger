@@ -4,6 +4,7 @@
     class FrontEnd extends CI_Controller{
         public function __construct(){
             parent::__construct();
+            $this->load->model('M_Trigger','mTrigger');            
         }
 
         public function index(){
@@ -25,7 +26,7 @@
         }
 
         public function about($page){
-            $data['judul'] = $this->Model_Trigger->getAbout($page);
+            $data['judul'] = $this->mTrigger->getAbout($page);
             $this->load->view('front/header');
             $this->load->view('front/v_about',$data);
             $this->load->view('front/footer');

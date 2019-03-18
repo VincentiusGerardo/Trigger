@@ -44,7 +44,19 @@
   <script src="<?= base_url('js/script.js') ?>"></script>
   <script src="<?= base_url('js/jam.js') ?>"></script>
   
+  <script src="<?= base_url('js/sweetalert.min.js') ?>"></script>
   
+  <?php if(!empty($this->session->flashdata('msg'))){ ?>
+    <script>
+      $(function(){
+        swal({
+          icon: "<?= $this->session->flashdata('alert') ?>",
+          title: "<?= $this->session->flashdata('msg') ?>",
+          button: "OK",
+        });
+      });
+    </script>
+  <?php } ?>
 </head>
 
 <body id="page-top" class="sidebar-toggled">
@@ -75,7 +87,7 @@
       
       <!-- About Us -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/AboutUs') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/About') ?>">
           <i class="fas fa-fw fa-question-circle"></i>
           <span>About</span>
         </a>

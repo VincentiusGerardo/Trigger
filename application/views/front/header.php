@@ -36,8 +36,12 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">About</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="<?= base_url('About/CompanyProfile'); ?>">Company Profile</a>
-                    <a class="dropdown-item" href="<?= base_url('About/VisiMisi'); ?>">Visi & Misi</a>
+                    <?php 
+                        $sql = $this->db->get_where('ms_about', array('FlagActive' => 'Y'));
+                        foreach($sql->result() as $a){
+                    ?>
+                    <a class="dropdown-item" href="<?= base_url('About/' . $a->JudulSEO); ?>"><?= $a->Judul ?></a>
+                    <?php } ?>
                 </div>
             </li>
             <li class="nav-item">

@@ -67,5 +67,4 @@ $route['Admin'] = 'Login/index';
 //Admin Page
 $route['Admin/Module'] = 'BackEnd/index';
 $route['Admin/Module/(:any)'] = 'BackEnd/$1';
-$route['Admin/Module/About/(:any)'] = 'BackEnd/About/$1';
 $route['Admin/Source/do/(:any)'] = 'CRUD/$1';

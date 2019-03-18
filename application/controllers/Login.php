@@ -4,7 +4,7 @@
     class Login extends CI_Controller{
         public function __construct(){
             parent::__construct();
-            $this->load->model('Model_Login');
+            $this->load->model('M_Login', 'mLogin');
         }
 
         public function index(){
@@ -22,7 +22,7 @@
             if($this->form_validation->run() == TRUE){
                 $uname = $this->input->post('inputID');
                 $pass = $this->input->post('inputPassword');
-                $r = $this->Model_Login->login($uname,$pass);
+                $r = $this->mLogin->login($uname,$pass);
 
                 if($r){
                     $data = array(
