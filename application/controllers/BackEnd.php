@@ -25,6 +25,7 @@
             $data['isi'] = $this->mBack->getAbout();
             $this->getHeader();
             $this->load->view('admin/v_about',$data);
+            $this->load->view('admin/modals/m_about',$data);
             $this->load->view('admin/footer');
         }
         
@@ -32,8 +33,16 @@
             $data['pro'] = $this->mBack->getProduct();
             $this->getHeader();
             $this->load->view('admin/v_product',$data);
+            $this->load->view('admin/modals/m_product',$data);
             $this->load->view('admin/footer');
         }
 
+        public function package(){
+
+        }
+
+        public function MC(){
+            
+        }
         
     }

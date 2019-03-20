@@ -51,11 +51,18 @@
         }
 
         public function getProduct(){
-
+            $q = $this->db->get_where('ms_product',array('FlagActive' => 'Y'));
+            return $q->result();
         }
         
-        public function insertProduct(){
-
+        public function insertProduct($data){
+            $q = $this->db->insert('ms_product', $data);
+            if($q){
+                return true;
+            }else{
+                return false;
+            }
+            
         }
 
         public function updateProduct(){

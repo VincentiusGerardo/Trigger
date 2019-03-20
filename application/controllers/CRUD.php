@@ -91,4 +91,53 @@
                 redirect('Admin/Module/About/');
             }
         }
+
+        public function doInsertProduct(){
+            $this->form_validation->set_rules('nProduct', 'Nama Product', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('ket', 'Keterangan', 'trim|required|xss_clean');
+            if(empty($_FILES['gambar']['name'])){
+                $this->form_validation->set_rules('gambar', 'Gambar Product', 'trim|required|xss_clean');
+            }
+
+            
+            if($this->form_validation->run() == TRUE){
+                $nama = $this->input->post('nProduct');
+                $isi = $this->input->post('ket');
+                
+                $config['upload_path']          = './media/product/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['max_size']             = 2048;
+                $config['file_name']            = str_replace(" ","",$nama);
+                $config['file_ext_tolower']     = TRUE;
+                
+
+                $this->load->library('upload', $config);
+                $gambarP = $this->upload->data('file_name');
+                
+                $this->upload->do_upload('gambar');
+                
+                $data = array(
+                    'NamaProduct' => $nama,
+                    'Keterangan' => $isi,
+                    'Gambar' => $gambarP
+                );
+
+                
+                $res = $this->mBack->insertProduct($data);
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    redirect('Admin/Module/Product/');    
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Inserted!');
+                    redirect('Admin/Module/Product/');    
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Data Incomplete!');
+                redirect('Admin/Module/Product/');    
+            }
+            
+        }
     }
