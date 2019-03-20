@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2019 at 10:30 PM
+-- Generation Time: Mar 20, 2019 at 11:08 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -70,6 +70,16 @@ CREATE TABLE `ms_product` (
   `FlagActive` char(1) NOT NULL DEFAULT 'Y'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ms_product`
+--
+
+INSERT INTO `ms_product` (`ID_Product`, `NamaProduct`, `Keterangan`, `Gambar`, `FlagActive`) VALUES
+(1, 'Coba aja gan', '<p>asdasdsadassdaa<br></p>', 'Cobaajagan', 'Y'),
+(2, 'asdada', '<p>testing aja ya<br></p>', 'asdada', 'Y'),
+(3, 'asdaegrf auwrawraaa', '<p>asbfdagr iarahiranrj rbqakr<br></p>', 'asdaegrfauwrawraaa', 'Y'),
+(4, 'adasdadad wad a', '<p>asdadsadsada<br></p>', 'adasdadadwada', 'Y');
+
 -- --------------------------------------------------------
 
 --
@@ -120,13 +130,13 @@ ALTER TABLE `ms_user`
 -- AUTO_INCREMENT for table `ms_about`
 --
 ALTER TABLE `ms_about`
-  MODIFY `ID_About` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_About` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ms_product`
 --
 ALTER TABLE `ms_product`
-  MODIFY `ID_Product` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
