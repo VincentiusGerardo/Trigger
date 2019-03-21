@@ -17,10 +17,10 @@
             <div class="card-body">
                 <?= $i->Keterangan ?>
                 <br><br>
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#update<?= $i->ID_About ?>">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#update<?= $i->ID_About ?>" data-toggle="tooltip" title="Edit <?= $i->Judul ?>">
                     <i class='far fa-edit'></i> Edit
                 </button>
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $i->ID_About ?>">
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $i->ID_About ?>" data-toggle="tooltip" title="Edit <?= $i->Judul ?>">
                     <i class='fa fa-trash'></i> Delete
                 </button>
             </div>

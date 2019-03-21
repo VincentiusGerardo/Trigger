@@ -105,32 +105,24 @@
                 $isi = $this->input->post('ket');
                 
                 $config['upload_path']          = './media/product/';
-                $config['allowed_types']        = 'gif|jpg|png|jpeg';
-                $config['max_size']             = 2048;
-                $config['file_name']            = str_replace(" ","",$nama);
-                $config['file_ext_tolower']     = TRUE;
-                
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['file_name']            = $nama;
 
                 $this->load->library('upload', $config);
-                $gambarP = $this->upload->data('file_name');
-                
-                $this->upload->do_upload('gambar');
-                
-                $data = array(
-                    'NamaProduct' => $nama,
-                    'Keterangan' => $isi,
-                    'Gambar' => $gambarP
-                );
+                if($this->upload->do_upload('gambar')){
+                    $data = array(
+                        'NamaProduct' => $nama,
+                        'Keterangan' => $isi,
+                        'Gambar' => $this->upload->data('file_name')
+                    );
 
-                
-                $res = $this->mBack->insertProduct($data);
-                if($res == true){
+                    $res = $this->mBack->insertProduct($data);
                     $this->session->set_flashdata('alert', 'success');
                     $this->session->set_flashdata('msg', 'Data Inserted!');
-                    redirect('Admin/Module/Product/');    
+                    redirect('Admin/Module/Product/');  
                 }else{
                     $this->session->set_flashdata('alert', 'error');
-                    $this->session->set_flashdata('msg', 'Data Not Inserted!');
+                    $this->session->set_flashdata('msg', $this->upload->display_errors());
                     redirect('Admin/Module/Product/');    
                 }
             }else{

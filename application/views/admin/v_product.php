@@ -1,4 +1,29 @@
-<script src="<?= base_url('js/setTable/product.js') ?>"></script>
+<script>
+$(function(){
+    $("#tableProduct").bootstrapTable({
+        columns: [
+            {
+                title: 'No',
+                align: 'center'
+            }, {
+                title: 'Nama Product',
+                halign: 'center',
+                align: 'left'
+            }, {
+                title: 'Keterangan',
+                halign: 'center',
+                align: 'left'
+            }, {
+                title: 'Gambar',
+                align: 'center'
+            }, {
+                title: 'Action',
+                align: 'center'
+            }
+        ]
+    });
+});
+</script>
 <h2 class="card-title">Product</h2>
 <hr>
 
@@ -15,9 +40,9 @@
       <td><?= $p->Keterangan ?></td>
       <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalGambar<?= $p->ID_Product; ?>">View</button></td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEdit<?= $p->ID_Product; ?>"><i class='fa fa-edit'></i></button>
-          &nbsp;&nbsp;
-        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete<?= $p->ID_Product; ?>"><i class='fa fa-trash'></i></button>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEdit<?= $p->ID_Product; ?>" data-toggle="tooltip" title="Edit <?= $p->NamaProduct ?>"><i class='fa fa-edit'></i></button>
+          &nbsp;
+        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete<?= $p->ID_Product; ?>" data-toggle="tooltip" title="Delete <?= $p->NamaProduct ?>"><i class='fa fa-trash'></i></button>
       </td>
     </tr>
     <?php $i++; } ?>

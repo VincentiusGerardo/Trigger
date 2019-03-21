@@ -72,4 +72,9 @@
         public function deleteProduct(){
 
         }
+
+        public function getCategory(){
+            $q = $this->db->get_where('ms_category', array('FlagActive' => 'Y'));
+            return $q->result();
+        }
     }

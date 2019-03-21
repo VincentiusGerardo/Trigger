@@ -9,7 +9,7 @@
                     </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('Admin/Source/do/doInsertProduct') ?>" method="post">
+                <form action="<?= base_url('Admin/Source/do/doInsertProduct') ?>" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="">Nama Produk</label>
                   <input type="text"
@@ -42,35 +42,17 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add Product</h5>
+                <h5 class="modal-title">Gambar <?= $p->NamaProduct ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('Admin/Source/do/doInsertProduct') ?>" method="post">
-                <div class="form-group">
-                  <label for="">Nama Produk</label>
-                  <input type="text"
-                    class="form-control" name="nProduct">
-                </div>
-                <div class="form-group">
-                  <label for="">Keterangan</label>
-                  <textarea class="editor" name="ket"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="">Gambar</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" name="gambar" accept="image/*">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                    </div>
-                </div>
+                <img src="<?= base_url('media/product/' . $p->Gambar) ?>" class="img-fluid" style="width: 100%;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
             </div>
-            </form>
         </div>
     </div>
 </div>

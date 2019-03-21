@@ -37,12 +37,27 @@
             $this->load->view('admin/footer');
         }
 
-        public function package(){
+        public function category(){
+            $data['cat'] = $this->mBack->getCategory();
+            $this->getHeader();
+            $this->load->view('admin/v_category', $data);
+            $this->load->view('admin/modals/m_category', $data);
+            $this->load->view('admin/footer');
+        }
 
+        public function package(){
+            $this->getHeader();
+            $this->load->view('admin/footer');
         }
 
         public function MC(){
-            
+            $this->getHeader();
+            $this->load->view('admin/footer');
+        }
+
+        public function catering(){
+            $this->getHeader();
+            $this->load->view('admin/footer');
         }
         
     }
