@@ -57,6 +57,37 @@
     </div>
 </div>
 
+<!-- Modal Upload Gambar -->
+<div class="modal fade" id="modalUpload<?= $p->ID_Product; ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload Gambar <?= $p->NamaProduct ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('Admin/Source/do/doUploadGambarProduct') ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?= $p->ID_Product ?>">
+                <input type="hidden" name="nama" value="<?= $p->NamaProduct ?>">
+                <div class="form-group">
+                    <label for="">Gambar</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" name="gambar" accept="image/*">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Edit -->
 <div class="modal fade" id="modalEdit<?= $p->ID_Product; ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId2" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">

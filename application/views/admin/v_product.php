@@ -42,6 +42,8 @@ $(function(){
       <td>
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEdit<?= $p->ID_Product; ?>" data-toggle="tooltip" title="Edit <?= $p->NamaProduct ?>"><i class='fa fa-edit'></i></button>
           &nbsp;
+          <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalUpload<?= $p->ID_Product; ?>" data-toggle="tooltip" title="Upload <?= $p->NamaProduct ?>"><i class='fa fa-upload'></i></button>
+          &nbsp;
         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete<?= $p->ID_Product; ?>" data-toggle="tooltip" title="Delete <?= $p->NamaProduct ?>"><i class='fa fa-trash'></i></button>
       </td>
     </tr>

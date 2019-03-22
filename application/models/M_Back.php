@@ -23,31 +23,19 @@
 
         public function insertAbout($data){
             $q = $this->db->insert('ms_about',$data);
-            if($q){
-                return true;
-            }else{
-                return false;
-            }
+            $q ? true : false;
         }
 
         public function updateAbout($id,$data){
             $cond = array('ID_About' => $id);
             $q = $this->db->update('ms_about', $data,$cond);
-            if($q){
-                return true;
-            }else{
-                return false;
-            }
+            $q ? true : false;
         }
 
         public function deleteAbout($id){
             $cond = array('ID_About' => $id);
             $q = $this->db->update('ms_about', array('FlagActive' => 'N'),$cond);
-            if($q){
-                return true;
-            }else{
-                return false;
-            }
+            $q ? true : false;
         }
 
         public function getProduct(){
@@ -57,24 +45,45 @@
         
         public function insertProduct($data){
             $q = $this->db->insert('ms_product', $data);
-            if($q){
-                return true;
-            }else{
-                return false;
-            }
-            
+            $q ? true : false;
         }
 
-        public function updateProduct(){
-
+        public function uploadGambar($id,$data){
+            $con = array('ID_Product' => $id);
+            $q = $this->db->update('ms_product',$data,$con);
+            $q ? true : false;
         }
 
-        public function deleteProduct(){
+        public function updateProduct($id, $data){
+            $cond = array('ID_Product' => $id);
+            $q = $this->db->update('ms_product',$data,$cond);
+            $q ? true : false;
+        }
 
+        public function deleteProduct($id){
+            $cond = array('ID_Product' => $id);
+            $q = $this->db->update('ms_product',array('FlagActive' => 'N'),$cond);
+            $q ? true : false;
         }
 
         public function getCategory(){
             $q = $this->db->get_where('ms_category', array('FlagActive' => 'Y'));
             return $q->result();
+        }
+
+        public function insertCategory($data){
+            $q = $this->db->insert('ms_category',$data);
+            $q ? true : false;
+        }
+
+        public function updateCategory($id,$data){
+            $c = array('ID_Category' => $id);
+            $q = $this->db->update('ms_category',$data,$c);
+            $q ? true : false;
+        }
+
+        public function deleteCategory($id){
+            $q = $this->db->update('ms_category',array('FlagActive' => 'N'),array('ID_Category' => $id));
+            $q ? true : false;
         }
     }

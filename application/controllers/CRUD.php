@@ -130,6 +130,51 @@
                 $this->session->set_flashdata('msg', 'Data Incomplete!');
                 redirect('Admin/Module/Product/');    
             }
+        }
+
+        public function doUploadGambarProduct(){
+            $this->form_validation->set_rules('id', 'ID Product', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nama', 'Nama Product', 'trim|required|xss_clean');
+            if(empty($_FILES['gambar']['name'])){
+                $this->form_validation->set_rules('gambar', 'Gambar Product', 'trim|required|xss_clean');
+            }
+
+            if($this->form_validation->run() == TRUE){
+                $idnya = $this->input->post('id');
+                $namanya = $this->input->post('nama');
+                
+                $config['upload_path']          = './media/product/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['overwrite']            = TRUE;
+                $config['file_name']            = $namanya;
+
+                $this->load->library('upload', $config);
+                if($this->upload->do_upload('gambar')){
+                    $data = array(
+                        'Gambar' => $this->upload->data('file_name')
+                    );
+
+                    $res = $this->mBack->uploadGambar($idnya,$data);
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    redirect('Admin/Module/Product/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', $this->upload->display_errors());
+                    redirect('Admin/Module/Product/');    
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Input!');
+                redirect('Admin/Module/Product/'); 
+            }
+        }
+
+        public function doUpdateProduct(){
             
+        }
+
+        public function doDeleteProduct(){
+
         }
     }
