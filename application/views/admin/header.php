@@ -94,7 +94,7 @@
       
       <!-- About Us -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/About') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/About/') ?>">
           <i class="fas fa-fw fa-question-circle"></i>
           <span>About</span>
         </a>
@@ -102,7 +102,7 @@
 
       <!-- Products -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/Product') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/Product/') ?>">
           <i class="fas fa-fw fa-image"></i>
           <span>Product</span></a>
       </li>
@@ -124,35 +124,35 @@
 
       <!-- MC -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/MC') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/MC/') ?>">
           <i class="fas fa-fw fa-user-tie"></i>
           <span>Master of Ceremony</span></a>
       </li>
 
       <!-- Package -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/Package') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/Package/') ?>">
           <i class="fas fa-fw fa-box"></i>
           <span>Package</span></a>
       </li>
 
       <!-- Catering -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/Catering') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/Catering/') ?>">
           <i class="fas fa-fw fa-pizza-slice"></i>
           <span>Catering</span></a>
       </li>
 
       <!-- History -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/TransactionHistory') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/TransactionHistory/') ?>">
           <i class="fas fa-fw fa-history"></i>
           <span>Order History</span></a>
       </li>
       
       <!-- Orders -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/Transaction') ?>">
+        <a class="nav-link" href="<?= base_url('Admin/Module/Transaction/') ?>">
           <i class="fas fa-fw fa-credit-card"></i>
           <span>Order</span></a>
       </li>

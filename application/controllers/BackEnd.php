@@ -47,8 +47,10 @@
 
         public function package(){
             $data['pack'] = $this->mBack->getPackage();
+            $data['cat'] = $this->mBack->getCatering();
             $this->getHeader();
             $this->load->view('admin/v_package',$data);
+            $this->load->view('admin/modals/m_package',$data);
             $this->load->view('admin/footer');
         }
 
@@ -64,6 +66,7 @@
             $data['cat'] = $this->mBack->getCatering();
             $this->getHeader();
             $this->load->view('admin/v_catering',$data);
+            $this->load->view('admin/modals/m_catering',$data);
             $this->load->view('admin/footer');
         }
 

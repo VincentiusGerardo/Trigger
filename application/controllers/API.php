@@ -27,4 +27,18 @@
             $data['catering'] = $this->mAPI->getCatering();
             print_r(json_encode($data));
         }
+        
+        /* Transaksi */
+
+        public function doInsertOrder(){
+
+        }
+
+        public function doInsertOrderCustom(){
+
+        }
+
+        public function doInsertOrderPaket(){
+
+        }
     }

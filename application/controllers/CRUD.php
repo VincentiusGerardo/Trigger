@@ -425,8 +425,100 @@
         }
 
         /* Paket */
+        public function doInsertPaket(){
+
+        }
+
+        public function doUploadGambarPaket(){
+
+        }
+
+        public function doUpdatePaket(){
+
+        }
+
+        public function doDeletePaket(){
+
+        }
 
         /* Catering */
+        public function doInsertCatering(){
+            $this->form_validation->set_rules('nVendor', 'Nama Vendor', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('menu', 'Isi Menu', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('hargas', 'Harga', 'trim|required|xss_clean');
+            
+            if($this->form_validation->run() == TRUE){
+                $data = array(
+                    'NamaVendor' => $this->input->post('nVendor'),
+                    'Menu' => $this->input->post('menu'),
+                    'Harga' => $this->input->post('hargas')
+                );
 
-        /* Transaksi */
+                $res = $this->mBack->insertCatering($data);
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    redirect('Admin/Module/Catering/');
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Inserted!');
+                    redirect('Admin/Module/Catering/');
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/Catering/');
+            }
+        }
+
+        public function doUpdateCatering(){
+            $this->form_validation->set_rules('id', 'ID Catering', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nVendor', 'Nama Vendor', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('menu', 'Isi Menu', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('hargas', 'Harga', 'trim|required|xss_clean');
+
+            if($this->form_validation->run() == TRUE){
+                $data = array(
+                    'NamaVendor' => $this->input->post('nVendor'),
+                    'Menu' => $this->input->post('menu'),
+                    'Harga' => $this->input->post('hargas')
+                );
+
+                $res = $this->mBack->updateCatering($this->input->post('id'),$data);
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Updated!');
+                    redirect('Admin/Module/Catering/');
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Updated!');
+                    redirect('Admin/Module/Catering/');
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/Catering/');
+            }
+        }
+
+        public function doDeleteCatering(){
+            $this->form_validation->set_rules('id', 'ID Catering', 'trim|required|xss_clean');
+            
+            if($this->form_validation->run() == TRUE){
+                $res = $this->mBack->deleteCatering($this->input->post('id'));
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Deleted!');
+                    redirect('Admin/Module/Catering/');
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Deleted!');
+                    redirect('Admin/Module/Catering/');
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/Catering/');
+            }
+        }
     }

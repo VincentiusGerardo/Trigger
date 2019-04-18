@@ -12,4 +12,11 @@ $(function(){
       });
 
       $(".isi:first").addClass('show');
+
+      $(".number").on("keypress keyup blur",function (e) {    
+        $(this).val($(this).val().replace(/[^\d].+/, ""));
+         if ((e.which < 48 || e.which > 57)) {
+             e.preventDefault();
+         }
+     });
 });

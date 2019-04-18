@@ -55,16 +55,22 @@ $route['translate_uri_dashes'] = FALSE;
 
 /* Custom Routes */
 
-// Front End
+/* Front End */
 $route['About/(:any)'] = 'FrontEnd/About/$1';
 $route['Contact'] = 'FrontEnd/Contact';
 $route['Product'] = 'FrontEnd/Product';
 $route['Product/Detail/(:any)'] = 'FrontEnd/Detail/$1';
 
-//Login
+/* Login */
 $route['Admin'] = 'Login/index';
 
-//Admin Page
+/* Admin Page */
 $route['Admin/Module'] = 'BackEnd/index';
 $route['Admin/Module/(:any)'] = 'BackEnd/$1';
 $route['Admin/Source/do/(:any)'] = 'CRUD/$1';
+
+/* API */
+$route['API/Source/get/(:any)'] = 'API/$1';
+$route['API/Source/do/Order'] = 'API/doInsertOrder';
+$route['API/Source/do/Order/Custom'] = 'API/doInsertOrderCustom';
+$route['API/Source/do/Order/Paket'] = 'API/doInsertOrderPaket';

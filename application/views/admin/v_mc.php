@@ -1,6 +1,6 @@
 <script>
 $(function(){
-    $("#tableProduct").bootstrapTable({
+    $("#tableMC").bootstrapTable({
         columns: [
             {
                 title: 'No',
@@ -27,7 +27,7 @@ $(function(){
 <i class='fa fa-plus'></i> Add
 </button>
 
-<table id="tableProduct" class="tables" data-height="340">
+<table id="tableMC" class="tables" data-height="340">
     <tbody>
     <?php $n = 1; foreach($mc as $m){ ?>
         <tr>
