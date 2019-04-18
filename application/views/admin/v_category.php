@@ -36,6 +36,6 @@ $(function(){
             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete<?= $c->ID_Category; ?>" data-toggle="tooltip" title="Delete <?= $c->NamaCategory ?>"><i class='fa fa-trash'></i></button>
         </td>
     </tr>
-  </tbody>
     <?php $i++; } ?>
+  </tbody>
 </table>

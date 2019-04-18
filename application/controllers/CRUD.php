@@ -10,6 +10,7 @@
             }
         }
 
+        /* About */
         public function doInsertAbout(){
             $this->form_validation->set_rules('jdl', 'Judul Menu', 'trim|required|xss_clean');
             $this->form_validation->set_rules('isi', 'Keterangan', 'trim|required|xss_clean');
@@ -92,6 +93,8 @@
             }
         }
 
+        /* Product */
+
         public function doInsertProduct(){
             $this->form_validation->set_rules('nProduct', 'Nama Product', 'trim|required|xss_clean');
             $this->form_validation->set_rules('ket', 'Keterangan', 'trim|required|xss_clean');
@@ -154,9 +157,9 @@
                         'Gambar' => $this->upload->data('file_name')
                     );
 
-                    $res = $this->mBack->uploadGambar($idnya,$data);
+                    $res = $this->mBack->uploadGambarProduct($idnya,$data);
                     $this->session->set_flashdata('alert', 'success');
-                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    $this->session->set_flashdata('msg', 'Image Uploaded!');
                     redirect('Admin/Module/Product/');  
                 }else{
                     $this->session->set_flashdata('alert', 'error');
@@ -165,16 +168,265 @@
                 }
             }else{
                 $this->session->set_flashdata('alert', 'error');
-                $this->session->set_flashdata('msg', 'Invalid Input!');
+                $this->session->set_flashdata('msg', 'Invalid Image!');
                 redirect('Admin/Module/Product/'); 
             }
         }
 
         public function doUpdateProduct(){
-            
+            $this->form_validation->set_rules('idP', 'ID Product', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nProduct', 'Nama Product', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('ket', 'Keterangan', 'trim|required|xss_clean');
+
+            if($this->form_validation->run() == TRUE){
+                $data = array(
+                    'NamaProduct' => $this->input->post('nProduct'),
+                    'Keterangan' => $this->input->post('ket')
+                );
+
+                $res =  $this->mBack->updateProduct($this->input->post('idP'),$data);
+
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Updated!');
+                    redirect('Admin/Module/Product/');
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Updated!');
+                    redirect('Admin/Module/Product/');
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Data Incomplete!');
+                redirect('Admin/Module/Product/');
+            }
         }
 
         public function doDeleteProduct(){
+            $this->form_validation->set_rules('idP', 'ID Product', 'trim|required|xss_clean');
 
+            if($this->form_validation->run() == TRUE){
+                $res = $this->mBack->deleteProduct($this->input->post('idP'));
+
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Deleted!');
+                    redirect('Admin/Module/Product/');
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Deleted!');
+                    redirect('Admin/Module/Product/');
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Data Incomplete!');
+                redirect('Admin/Module/Product/');
+            } 
         }
+
+        /* Category */
+        public function doInsertCategory(){
+            $this->form_validation->set_rules('nCategory', 'Nama Category', 'trim|required|xss_clean');
+            
+            if($this->form_validation->run() == TRUE){
+                $data = array(
+                    'NamaCategory' => $this->input->post('nCategory')
+                );
+                
+                $res = $this->mBack->insertCategory($data);
+                
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    redirect('Admin/Module/Category/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Inserted!');
+                    redirect('Admin/Module/Category/');  
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Input!');
+                redirect('Admin/Module/Category/'); 
+            }
+        }
+
+        public function doUpdateCategory(){
+            $this->form_validation->set_rules('idC', 'ID Category', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nCategory', 'Nama Category', 'trim|required|xss_clean');
+            
+            if($this->form_validation->run() == TRUE){
+                $id = $this->input->post('idC');
+                $data = array(
+                    'NamaCategory' => $this->input->post('nCategory')
+                );
+                
+                $res = $this->mBack->updateCategory($id,$data);
+                
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Updated!');
+                    redirect('Admin/Module/Category/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Updated!');
+                    redirect('Admin/Module/Category/');  
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Input!');
+                redirect('Admin/Module/Category/'); 
+            }
+        }
+
+        public function doDeleteCategory(){
+            $this->form_validation->set_rules('idC', 'ID Category', 'trim|required|xss_clean');
+
+            if($this->form_validation->run() == TRUE){
+                $id = $this->input->post('idC');
+                
+                $res = $this->mBack->deleteCategory($id);
+                
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Deleted!');
+                    redirect('Admin/Module/Category/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Deleted!');
+                    redirect('Admin/Module/Category/');  
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Input!');
+                redirect('Admin/Module/Category/'); 
+            }
+        }
+        
+        /* MC */
+
+        public function doInsertMC(){
+            $this->form_validation->set_rules('nMC', 'Nama MC', 'trim|required|xss_clean');
+            if(empty($_FILES['gambar']['name'])){
+                $this->form_validation->set_rules('gambar', 'Gambar Product', 'trim|required|xss_clean');
+            }
+
+            if ($this->form_validation->run() == TRUE or FALSE) {
+                $nama = $this->input->post('nMC');
+
+                $config['upload_path']          = './media/MC/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['file_name']            = $nama;
+
+                $this->load->library('upload', $config);
+                if($this->upload->do_upload('gambar')){
+                    $data = array(
+                        'NamaMC' => $nama,
+                        'Image' => $this->upload->data('file_name')
+                    );
+
+                    $res = $this->mBack->insertMC($data);
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    redirect('Admin/Module/MC/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', $this->upload->display_errors());
+                    redirect('Admin/Module/MC/');    
+                }
+            } else {
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/MC/');
+            }
+        }
+
+        public function doUploadGambarMC(){
+            $this->form_validation->set_rules('id', 'ID MC', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nama', 'Nama MC', 'trim|required|xss_clean');
+            if(empty($_FILES['gambar']['name'])){
+                $this->form_validation->set_rules('gambar', 'Gambar MC', 'trim|required|xss_clean');
+            }
+
+            if($this->form_validation->run() == TRUE){
+                $idnya = $this->input->post('id');
+                $namanya = $this->input->post('nama');
+                
+                $config['upload_path']          = './media/MC/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['overwrite']            = TRUE;
+                $config['file_name']            = $namanya;
+
+                $this->load->library('upload', $config);
+                if($this->upload->do_upload('gambar')){
+                    $data = array(
+                        'Image' => $this->upload->data('file_name')
+                    );
+
+                    $res = $this->mBack->uploadGambarMC($idnya,$data);
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Image Uploaded!');
+                    redirect('Admin/Module/MC/');
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', $this->upload->display_errors());
+                    redirect('Admin/Module/MC/');  
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Image!');
+                redirect('Admin/Module/MC/');
+            }
+        }
+
+        public function doUpdateMC(){
+            $this->form_validation->set_rules('id', 'ID MC', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nMC', 'Nama MC', 'trim|required|xss_clean');
+
+            if($this->form_validation->run() == TRUE){
+                $res = $this->mBack->updateMC($this->input->post('id'), array('NamaMC' => $this->input->post('nMC')));
+
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Updated!');
+                    redirect('Admin/Module/MC/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Updated!');
+                    redirect('Admin/Module/MC/');  
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/MC/');
+            }
+        }
+
+        public function doDeleteMC(){
+            $this->form_validation->set_rules('id', 'ID MC', 'trim|required|xss_clean');
+            
+            if($this->form_validation->run() == TRUE){
+                $res = $this->mBack->deleteMC($this->input->post('id'));
+
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Deleted!');
+                    redirect('Admin/Module/MC/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Deleted!');
+                    redirect('Admin/Module/MC/');  
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/MC/');
+            }
+        }
+
+        /* Paket */
+
+        /* Catering */
+
+        /* Transaksi */
     }

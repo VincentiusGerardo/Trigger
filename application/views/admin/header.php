@@ -108,11 +108,11 @@
       </li>
 
       <!-- Category -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Admin/Module/Category') ?>">
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="">
           <i class="fas fa-fw fa-bars"></i>
           <span>Category</span></a>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -141,6 +141,20 @@
         <a class="nav-link" href="<?= base_url('Admin/Module/Catering') ?>">
           <i class="fas fa-fw fa-pizza-slice"></i>
           <span>Catering</span></a>
+      </li>
+
+      <!-- History -->
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('Admin/Module/TransactionHistory') ?>">
+          <i class="fas fa-fw fa-history"></i>
+          <span>Order History</span></a>
+      </li>
+      
+      <!-- Orders -->
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('Admin/Module/Transaction') ?>">
+          <i class="fas fa-fw fa-credit-card"></i>
+          <span>Order</span></a>
       </li>
 
       <!-- Divider -->

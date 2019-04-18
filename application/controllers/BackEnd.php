@@ -46,17 +46,40 @@
         }
 
         public function package(){
+            $data['pack'] = $this->mBack->getPackage();
             $this->getHeader();
+            $this->load->view('admin/v_package',$data);
             $this->load->view('admin/footer');
         }
 
         public function MC(){
+            $data['mc'] = $this->mBack->getMC();
             $this->getHeader();
+            $this->load->view('admin/v_mc',$data);
+            $this->load->view('admin/modals/m_mc',$data);
             $this->load->view('admin/footer');
         }
 
         public function catering(){
+            $data['cat'] = $this->mBack->getCatering();
             $this->getHeader();
+            $this->load->view('admin/v_catering',$data);
+            $this->load->view('admin/footer');
+        }
+
+        public function transaction(){
+            $this->getHeader();
+            $this->load->view('admin/v_transaction');
+            $this->load->view('admin/footer');
+        }
+
+        public function getTransactions(){
+            
+        }
+
+        public function TransactionHistory(){
+            $this->getHeader();
+            // $this->load->view('admin/v_transaction');
             $this->load->view('admin/footer');
         }
         
