@@ -85,5 +85,4 @@
             // $this->load->view('admin/v_transaction');
             $this->load->view('admin/footer');
         }
-        
     }

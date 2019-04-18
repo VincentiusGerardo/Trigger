@@ -63,6 +63,9 @@ $route['Product/Detail/(:any)'] = 'FrontEnd/Detail/$1';
 
 /* Login */
 $route['Admin'] = 'Login/index';
+$route['Admin/Source/do/doLogin'] = 'Login/doLogin';
+$route['Admin/Source/do/doLogout'] = 'Login/doLogout';
+$route['Admin/Source/do/ChangePassword'] = 'Login/changePassword';
 
 /* Admin Page */
 $route['Admin/Module'] = 'BackEnd/index';

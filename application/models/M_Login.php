@@ -37,4 +37,23 @@
                 return false;
             }
         }
+
+        public function changePass($user,$pass){
+            $q = $this->db->get_where('ms_user',array('ID_User' => $user));
+            if($q->num_rows() > 0){
+                $row = $q->row();
+                if(password_verify($pass,$row->Password)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+
+        public function updatePass($id,$data){
+            $q = $this->db->update('ms_user',$data,array('ID_User' => $id));
+            if($q) return true; else return false;
+        }
     }

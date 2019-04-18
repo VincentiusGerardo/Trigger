@@ -52,7 +52,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
                   </div>
-                  <form class="user" action="<?= base_url('Login/doLogin') ?>" method="POST">
+                  <form class="user" action="<?= base_url('Admin/Source/do/doLogin') ?>" method="POST">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="inputID" placeholder="User ID" autofocus>
                     </div>
