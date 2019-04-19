@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2019 at 11:03 PM
+-- Generation Time: Apr 20, 2019 at 01:03 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -118,12 +118,21 @@ CREATE TABLE `ms_paket` (
   `NamaPaket` text NOT NULL,
   `ID_MC` int(11) NOT NULL,
   `ID_Catering` int(11) NOT NULL,
+  `ID_Product` int(11) NOT NULL,
   `NamaTempat` text NOT NULL,
   `Alamat` text NOT NULL,
   `Image` text NOT NULL,
   `Biaya` int(11) NOT NULL,
   `FlagActive` char(1) NOT NULL DEFAULT 'Y'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ms_paket`
+--
+
+INSERT INTO `ms_paket` (`ID_Paket`, `NamaPaket`, `ID_MC`, `ID_Catering`, `ID_Product`, `NamaTempat`, `Alamat`, `Image`, `Biaya`, `FlagActive`) VALUES
+(1, 'Paket Hemat 1', 1, 1, 1, 'Balai Sudirman', '<p><span class=\"w8qArf\"> </span><span class=\"LrzXr\">Jl. Dr. Saharjo No.268, RT.1/RW.4, Menteng Dalam, Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12870</span></p>', 'Paket_Hemat_1.jpg', 1500000, 'Y'),
+(2, 'Paket Hemat 2', 3, 1, 2, 'The Jungle Bogor', '<p><span class=\"LrzXr\">Jalan Bogor Nirwana Boulevard, Perumahan Bogor \r\nNirwana Residence, Mulyaharja, Bogor Selatan, Mulyaharja, Bogor Sel., \r\nKota Bogor, Jawa Barat 16132</span></p>', 'Paket_Hemat_2.jpg', 10000000, 'Y');
 
 -- --------------------------------------------------------
 
@@ -177,7 +186,7 @@ CREATE TABLE `ms_user` (
 --
 
 INSERT INTO `ms_user` (`ID_User`, `NamaUser`, `Password`, `FlagActive`) VALUES
-('0000', 'Administrator', '$2y$10$yUcto.BuzbZYk01w0NfGr.qywF33wrxePV2S9chZjh0SFRDqtMfhO', 'Y');
+('0000', 'Administrator', '$2y$10$y4QtN1g1aDFMFic6/blu0.dCBCejYH.vkMCIkbr7bA.bC0KMuQjXu', 'Y');
 
 -- --------------------------------------------------------
 
@@ -208,7 +217,8 @@ CREATE TABLE `tr_custom` (
 CREATE TABLE `tr_order` (
   `ID_Order` int(11) NOT NULL,
   `ID_Pelanggan` int(11) NOT NULL,
-  `ID_JenisOrder` int(11) NOT NULL
+  `ID_JenisOrder` int(1) NOT NULL,
+  `StatusNew` char(1) NOT NULL DEFAULT 'Y'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -322,7 +332,7 @@ ALTER TABLE `ms_mc`
 -- AUTO_INCREMENT for table `ms_paket`
 --
 ALTER TABLE `ms_paket`
-  MODIFY `ID_Paket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ms_product`

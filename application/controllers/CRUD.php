@@ -426,18 +426,110 @@
 
         /* Paket */
         public function doInsertPaket(){
+            $this->form_validation->set_rules('nPaket', 'Nama Paket', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('sMC', 'Select MC', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('sCatering', 'Select Catering', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('sProduct', 'Select Product', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nTempat', 'Nama Tempat', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('alamats', 'Alamat', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('hargas', 'Harga Paket', 'trim|required|xss_clean');
+            if(empty($_FILES['gambar']['name'])){
+                $this->form_validation->set_rules('gambar', 'Gambar MC', 'trim|required|xss_clean');
+            }
 
+            
+            if($this->form_validation->run() == TRUE){
+                $config['upload_path']          = './media/paket/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['file_name']            = $this->input->post('nPaket');
+
+                $this->load->library('upload', $config);
+                if($this->upload->do_upload('gambar')){
+                    $data = array(
+                        'NamaPaket' => $this->input->post('nPaket'),
+                        'ID_MC' => $this->input->post('sMC'),
+                        'ID_Catering' => $this->input->post('sCatering'),
+                        'ID_Product' => $this->input->post('sProduct'),
+                        'NamaTempat' => $this->input->post('nTempat'),
+                        'Alamat' => $this->input->post('alamats'),
+                        'Image' => $this->upload->data('file_name'),
+                        'Biaya' => $this->input->post('hargas')
+                    );
+
+                    $res = $this->mBack->insertPackage($data);
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Inserted!');
+                    redirect('Admin/Module/Package/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', $this->upload->display_errors());
+                    redirect('Admin/Module/Package/');    
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/Package/');
+            }
+            
         }
 
         public function doUploadGambarPaket(){
+            $this->form_validation->set_rules('id', 'ID Paket', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('nama', 'Nama Paket', 'trim|required|xss_clean');
+            if(empty($_FILES['gambar']['name'])){
+                $this->form_validation->set_rules('gambar', 'Gambar MC', 'trim|required|xss_clean');
+            }
 
+            if($this->form_validation->run() == TRUE){
+                $config['upload_path']          = './media/paket/';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['overwrite']            = TRUE;
+                $config['file_name']            = $this->input->post('nama');
+
+                $this->load->library('upload', $config);
+                if($this->upload->do_upload('gambar')){
+                    $data = array(
+                        'Image' => $this->upload->data('file_name')
+                    );
+
+                    $res = $this->mBack->uploadGambarPackage($this->input->post('id'), $data);
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Updated!');
+                    redirect('Admin/Module/Package/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', $this->upload->display_errors());
+                    redirect('Admin/Module/Package/');    
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/Package/');
+            }
         }
 
-        public function doUpdatePaket(){
+        // public function doUpdatePaket(){
 
-        }
+        // }
 
         public function doDeletePaket(){
+            $this->form_validation->set_rules('id', 'ID Paket', 'trim|required|xss_clean');
+            if($this->form_validation->run() == TRUE){
+                $res = $this->mBack->deletePackage($this->input->post('id'));
+                if($res == true){
+                    $this->session->set_flashdata('alert', 'success');
+                    $this->session->set_flashdata('msg', 'Data Deleted!');
+                    redirect('Admin/Module/Package/');  
+                }else{
+                    $this->session->set_flashdata('alert', 'error');
+                    $this->session->set_flashdata('msg', 'Data Not Deleted!');
+                    redirect('Admin/Module/Package/');
+                }
+            }else{
+                $this->session->set_flashdata('alert', 'error');
+                $this->session->set_flashdata('msg', 'Invalid Data!');
+                redirect('Admin/Module/Package/');
+            }
 
         }
 

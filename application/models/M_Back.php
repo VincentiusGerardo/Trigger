@@ -119,7 +119,7 @@
         
         /* Paket */
         public function getPackage(){
-            $q = $this->db->query("SELECT a.ID_Paket,a.NamaPaket, b.NamaMC, c.NamaVendor, a.NamaTempat, a.Alamat,a.Image,a.Biaya FROM ms_paket a, ms_mc b, ms_catering c WHERE a.ID_MC = b.ID_MC and a.ID_Catering = c.ID_Catering and a.FlagActive = 'Y'");
+            $q = $this->db->query("SELECT a.ID_Paket,a.NamaPaket, b.NamaMC, c.NamaVendor, d.NamaProduct, a.NamaTempat,a.Alamat,a.Image,a.Biaya FROM ms_paket a, ms_mc b, ms_catering c, ms_product d WHERE a.ID_MC = b.ID_MC and a.ID_Catering = c.ID_Catering and a.ID_Product = d.ID_Product and a.FlagActive = 'Y'");
             return $q->result();
         }
 
@@ -131,6 +131,11 @@
         public function updatePackage($id,$data){
             $c = array('ID_Paket' => $id);
             $q = $this->db->update('ms_paket',$data,$c);
+            if($q) return true; else return false;
+        }
+
+        public function uploadGambarPackage($id,$data){
+            $q = $this->db->update('ms_paket',$data, array('ID_Paket' => $id));
             if($q) return true; else return false;
         }
 

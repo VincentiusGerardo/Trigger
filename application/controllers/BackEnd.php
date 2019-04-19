@@ -46,8 +46,10 @@
         }
 
         public function package(){
-            $data['pack'] = $this->mBack->getPackage();
+            $data['package'] = $this->mBack->getPackage();
             $data['cat'] = $this->mBack->getCatering();
+            $data['mc'] = $this->mBack->getMC();
+            $data['pro'] = $this->mBack->getProduct();
             $this->getHeader();
             $this->load->view('admin/v_package',$data);
             $this->load->view('admin/modals/m_package',$data);
