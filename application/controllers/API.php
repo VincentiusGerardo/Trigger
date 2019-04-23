@@ -27,6 +27,11 @@
             $data['catering'] = $this->mAPI->getCatering();
             print_r(json_encode($data));
         }
+
+        public function getDetailPaket($id){
+            $data['paket'] = $this->mAPI->getDetailPackage($id);
+            print_r(json_encode($data));
+        }
         
         /* Transaksi */
 

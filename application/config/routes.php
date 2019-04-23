@@ -73,7 +73,9 @@ $route['Admin/Module/(:any)'] = 'BackEnd/$1';
 $route['Admin/Source/do/(:any)'] = 'CRUD/$1';
 
 /* API */
+
 $route['API/Source/get/(:any)'] = 'API/$1';
+$route['API/Source/get/Paket/(:any)'] = 'API/getDetailPaket/$1';
 $route['API/Source/do/Order'] = 'API/doInsertOrder';
 $route['API/Source/do/Order/Custom'] = 'API/doInsertOrderCustom';
 $route['API/Source/do/Order/Paket'] = 'API/doInsertOrderPaket';
